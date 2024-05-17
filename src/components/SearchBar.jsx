@@ -1,45 +1,36 @@
-"use client";
 import React, { useState } from "react";
-import { search } from '../app/api';
+import { getRecipes } from "@/app/api";
 
-const SearchBar = () => {
+const SearchBar = ({ setRecipes }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [recipes, setRecipes] = useState([]);
 
-
-  const handleSearchTermChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
-  
-  const handleSearch = (event) => {
+  const handleSearch = async (event) => {
     event.preventDefault();
-    console.log("Search Term:", searchTerm);
-    search(searchTerm)
-      .then(response => {
-        console.log(response.data);
-        // Do something with the data
-        setRecipes(response.data);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
+    if (!searchTerm.trim()) {
+      alert("Please enter a name!");
+      return;
+    }
+    try {
+      const data = await getRecipes(searchTerm);
+      setRecipes(data);
+      localStorage.setItem("recipes", JSON.stringify(data));
+    } catch (error) {
+      console.error("Error:", error);
+      alert(
+        "An error occurred while searching for recipes. Please try again later."
+      );
+    }
   };
-  
+
   return (
-    <form id="searchformid">
+    <form onSubmit={handleSearch}>
       <input
         className="form-control me-2"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
+        type="text"
         value={searchTerm}
-        onChange={handleSearchTermChange}
-      />      
-      <button
-        className="btn btn-outline-success"
-        type="submit"
-        onClick={handleSearch}
-      >
+        onChange={(event) => setSearchTerm(event.target.value)}
+      />
+      <button className="btn btn-outline-success" type="submit">
         Search
       </button>
     </form>
