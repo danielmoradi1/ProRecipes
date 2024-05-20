@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import styles from "../../public/RecipeList.module.css"; // Import the CSS module
+import styles from "../../style/RecipeList.module.css";
 
 const RecipeList = ({ recipes }) => {
   const [storedRecipes, setStoredRecipes] = useState([]);

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { getRecipes } from "@/app/api";
+import styles from "../../style/RecipeList.module.css";
 
 const SearchBar = ({ setRecipes }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -23,14 +24,15 @@ const SearchBar = ({ setRecipes }) => {
   };
 
   return (
-    <form onSubmit={handleSearch}>
+    <form className={styles.form} onSubmit={handleSearch}>
       <input
         className="form-control me-2"
         type="text"
+        placeholder="Search for recipes"
         value={searchTerm}
         onChange={(event) => setSearchTerm(event.target.value)}
       />
-      <button className="btn btn-outline-success" type="submit">
+      <button id="button" className={styles.button} type="submit">
         Search
       </button>
     </form>
@@ -38,3 +40,4 @@ const SearchBar = ({ setRecipes }) => {
 };
 
 export default SearchBar;
+

@@ -1,0 +1,14 @@
+/* style/index.css */
+.container {
+    padding-top: 5em; 
+}
+
+.header h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.results h2 {
+    margin: 20px;
+    text-align: center;
+}
