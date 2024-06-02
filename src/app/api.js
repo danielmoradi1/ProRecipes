@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const app_id = "16179f18"; // Replace with your Edamam application ID
-const app_key = "c8b5438e9e7ce5a74d34f62602738793"; // Replace with your Edamam API key
+const app_id = "16179f18"; 
+const app_key = "c8b5438e9e7ce5a74d34f62602738793"; 
 
 export const getRecipes = async (recipeName) => {
   try {

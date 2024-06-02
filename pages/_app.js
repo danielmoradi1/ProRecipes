@@ -1,6 +1,6 @@
 // pages/_app.js
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../style/index.css"; // Ensure the correct path to your global CSS file
+import "../style/index.css"; 
 import Head from "next/head";
 
 const metadata = {
