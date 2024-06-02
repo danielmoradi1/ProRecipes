@@ -1,5 +1,23 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+
+## ProRecipes is an application for searching recipes using Edamam's API. It uses React, Next.js, Bootstrap and Axios.
+
+Functions
+- Search recipes: Users can search for recipes using a search field.
+- Show results: List of matching recipes is displayed.
+- Recipe details: Click on a recipe to see details, ingredients and instructions.
+
+Folder structure
+- pages: Contains page components, including dynamic recipe pages.
+- src/app: Contains API management with Axios.
+- src/components: Contains components for recipe list, detail view and search field.
+- style: Contains CSS files for styling.
+
+Bootstrap is used for responsive design and Axios for API calls.
+
+
+
 ## Getting Started
 
 First, run the development server:
@@ -34,3 +52,5 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
